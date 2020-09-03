@@ -1,0 +1,70 @@
+- python_ch3 장고 프로젝트(django_project 만들기 -
+
+1.PyCharm에서 python_ch3 프로젝트 만들기
+
+2.Django 설치
+  터미널에서
+# pip install django
+
+3.mysqlclient 설치
+  터미널에서
+  pip install mysqlclient
+
+4.장고 프로젝트 생성
+  터미널에서
+  django-admin startproject python_ch3
+
+5. 디렉토리 정리
+
+6. settings.py 설정
+
+    1) TIME_ZONE = 'Asia/Seoul'
+    2) DATABASES = {
+    	'default': {
+ 	        'ENGINE': 'django.db.backends.mysql',
+        	'NAME': 'weddb',
+        	'USER': 'weddb',
+        	'PASSWORD': 'weddb',
+        	'HOST': '127.0.0.1',
+        	'PORT': 3307
+    		}
+	}
+
+7. 기본적으로 장고 프로젝트가 관리하는 테이블을 생성
+   터미널에서
+   python manage.py migrate
+
+
+8.
+장고 프로젝트 관리 어플리케이션의 관리자 계정 생성하기.
+터미널에서
+python manage.py createsuperuser
+
+9. 지금까지 작업 내용 확인하기
+1) 서버 시작하기
+터미널에서
+#python manage.py runserver 0.0.0.0:9999
+2)브라우져에서
+#http://127.0.0.1:9999 로 접근
+
+============================================
+- 장고 프로젝트의 Application 만들기 -
+
+1. 어플리케이션 들의 통합 templates 디렉토리 만들기
+    1) django_practices(프로젝트 루트)
+        |---- templates
+    2) setting.py 에 설정작업
+           TEAMPLATE 변수에
+ 2. helloworld 어플리케이션 만들기
+    1) 터미널에서
+        #python manage.py startapp helloworld
+    2) template/helloworld 디렉토리 생성
+    3) 어플리 케이션 등록
+        settings.py의 INSTALLED_APPS 에 추가한다.
+
+-----------------------------------------------------
+    4)/hello url
+-----------------------------------------------------
+ 3.  emaillist 어플리케이션 만들기.
+     1) 터미널에서
+        #python manage.py startapp emaillist
